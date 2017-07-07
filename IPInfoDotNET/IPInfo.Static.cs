@@ -10,30 +10,21 @@ namespace IPInfoDotNET
         /// Get the IP information of the current machine ( public IP )
         /// </summary>
         /// <returns><see cref="IPInfo"/> Result</returns>
-        public static IPInfo Get()
-        {
-            return Get(null);
-        }
+        public static IPInfo Get() => Get(null);
 
         /// <summary>
         /// Get the IP information of the given IP
         /// </summary>
         /// <param name="ip">IP to check</param>
         /// <returns><see cref="IPInfo"/> Result</returns>
-        public static IPInfo Get(string ip)
-        {
-            return new IPInfo(GetParserRequest(ip));
-        }
+        public static IPInfo Get(string ip) => new IPInfo(GetParserRequest(ip));
 
         /// <summary>
         /// Get a specific IP information of the current machine
         /// </summary>
         /// <param name="key"><see cref="IPInfoKey"/> Value to get</param>
         /// <returns>Result</returns>
-        public static string Get(IPInfoKey key)
-        {
-            return GetRequest(key, null);
-        }
+        public static string Get(IPInfoKey key) => GetRequest(key, null);
 
         /// <summary>
         /// Get the specific IP information of the given IP
@@ -41,10 +32,7 @@ namespace IPInfoDotNET
         /// <param name="key"><see cref="IPInfoKey"/> Value to get</param>
         /// <param name="ip">IP to check</param>
         /// <returns>Result</returns>
-        public static string Get(IPInfoKey key, string ip)
-        {
-            return GetRequest(key, ip);
-        }
+        public static string Get(IPInfoKey key, string ip) => GetRequest(key, ip);
 
         /// <summary>
         /// Get request for the given ip
