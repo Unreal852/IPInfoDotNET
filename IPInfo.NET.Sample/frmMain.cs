@@ -23,7 +23,7 @@ namespace IPInfo.NET.Sample
         private async void BtnRequest_Click(object sender, EventArgs e)
         {
             treeResult.Nodes.Clear();
-
+            SetControlsState(false);
             IPResult result = null;
             if (ckAsync.Checked)
             {
@@ -31,8 +31,7 @@ namespace IPInfo.NET.Sample
                 {
                     string txt = await IPInfo.GetAsync((IPInfoKey)cmbFields.SelectedItem, GetValidIP(), txtToken.Text);
                     MessageBox.Show(txt);
-                    pnlControls.Enabled = true;
-                    pbRequesting.Style = ProgressBarStyle.Blocks;
+                    SetControlsState(true);
                     return;
                 }
                 result = await IPInfo.GetAsync(GetValidIP(), txtToken.Text);
@@ -42,8 +41,7 @@ namespace IPInfo.NET.Sample
                 if (cmbFields.SelectedIndex != 0)
                 {
                     MessageBox.Show(IPInfo.Get((IPInfoKey)cmbFields.SelectedItem, GetValidIP(), txtToken.Text));
-                    pnlControls.Enabled = true;
-                    pbRequesting.Style = ProgressBarStyle.Blocks;
+                    SetControlsState(true);
                     return;
                 }
                 result = IPInfo.Get(GetValidIP(), txtToken.Text);
@@ -74,8 +72,7 @@ namespace IPInfo.NET.Sample
 
             treeResult.Nodes.Add(mainNode);
 
-            pnlControls.Enabled = true;
-            pbRequesting.Style = ProgressBarStyle.Blocks;
+            SetControlsState(true);
         }
 
         /// <summary>
