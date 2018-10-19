@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
+using System.IO;
 
 namespace IPInfo
 {
@@ -7,54 +7,67 @@ namespace IPInfo
     {
         internal IPResult(Dictionary<string, object> values) : base(values)
         {
-            if(Values.ContainsKey("asn"))
-            {
-                ASN = new ASNResult((Dictionary<string, object>)Values["asn"]);
-                Values.Remove("asn");
-            }
+            if (Values.ContainsKey("asn"))
+                ASN = new ASNResult((Dictionary<string, object>)GetAndRemove("asn"));
             if (Values.ContainsKey("company"))
-            {
-                Company = new COMPANYResult((Dictionary<string, object>)Values["company"]);
-                Values.Remove("company");
-            }
+                Company = new COMPANYResult((Dictionary<string, object>)GetAndRemove("company"));
             if (Values.ContainsKey("carrier"))
-            {
-                Carrier = new CARRIERResult((Dictionary<string, object>)Values["carrier"]);
-                Values.Remove("carrier");
-            }
+                Carrier = new CARRIERResult((Dictionary<string, object>)GetAndRemove("carrier"));
         }
 
-        [DataMember(Name = "ip")]
+        /// <summary>
+        /// IP Address
+        /// </summary>
         public string IP => this["ip"];
 
-        [DataMember(Name = "hostname")]
+        /// <summary>
+        /// Hostname
+        /// </summary>
         public string HostName => this["hostname"];
 
-        [DataMember(Name = "city")]
+        /// <summary>
+        /// City
+        /// </summary>
         public string City => this["city"];
 
-        [DataMember(Name = "region")]
+        /// <summary>
+        /// Region
+        /// </summary>
         public string Region => this["region"];
 
-        [DataMember(Name = "country")]
+        /// <summary>
+        /// Country
+        /// </summary>
         public string Country => this["country"];
 
-        [DataMember(Name = "loc")]
+        /// <summary>
+        /// Location
+        /// </summary>
         public string Location => this["loc"];
 
-        [DataMember(Name = "postal")]
+        /// <summary>
+        /// Postal
+        /// </summary>
         public string Postal => this["postal"];
 
-        [DataMember(Name = "org")]
+        /// <summary>
+        /// Organisation
+        /// </summary>
         public string Organisation => this["org"];
 
-        [DataMember(Name = "asn")]
+        /// <summary>
+        /// ASN
+        /// </summary>
         public ASNResult ASN { get; }
 
-        [DataMember(Name = "company")]
+        /// <summary>
+        /// Company
+        /// </summary>
         public COMPANYResult Company { get; }
 
-        [DataMember(Name = "carrier")]
+        /// <summary>
+        /// Carrier
+        /// </summary>
         public CARRIERResult Carrier { get; }
     }
 }
