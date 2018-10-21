@@ -35,6 +35,7 @@ namespace IPInfo.NET.Sample
                     return;
                 }
                 result = await IPInfo.GetAsync(GetValidIP(), txtToken.Text);
+                result.DownloadLocalisationMap();
             }
             else
             {
@@ -116,6 +117,11 @@ namespace IPInfo.NET.Sample
                 pnlControls.Enabled = false;
                 pbRequesting.Style = ProgressBarStyle.Marquee;
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
