@@ -38,17 +38,8 @@
             this.btnRequest = new System.Windows.Forms.Button();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.treeResult = new System.Windows.Forms.TreeView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.picLocMap = new System.Windows.Forms.PictureBox();
             this.pnlControls.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLocMap)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlControls
@@ -65,7 +56,7 @@
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControls.Location = new System.Drawing.Point(0, 0);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(568, 109);
+            this.pnlControls.Size = new System.Drawing.Size(423, 109);
             this.pnlControls.TabIndex = 0;
             // 
             // label3
@@ -145,68 +136,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Lookup IP:";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.splitContainer1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 109);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(568, 367);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
             // treeResult
             // 
             this.treeResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeResult.Location = new System.Drawing.Point(0, 0);
+            this.treeResult.Location = new System.Drawing.Point(0, 109);
             this.treeResult.Name = "treeResult";
-            this.treeResult.Size = new System.Drawing.Size(288, 367);
+            this.treeResult.Size = new System.Drawing.Size(423, 367);
             this.treeResult.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeResult);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.picLocMap);
-            this.splitContainer1.Size = new System.Drawing.Size(568, 367);
-            this.splitContainer1.SplitterDistance = 288;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // picLocMap
-            // 
-            this.picLocMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picLocMap.Location = new System.Drawing.Point(0, 0);
-            this.picLocMap.Name = "picLocMap";
-            this.picLocMap.Size = new System.Drawing.Size(276, 367);
-            this.picLocMap.TabIndex = 0;
-            this.picLocMap.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 476);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(423, 476);
+            this.Controls.Add(this.treeResult);
             this.Controls.Add(this.pnlControls);
             this.Name = "frmMain";
             this.Text = "IPInfo.NET Sample";
             this.pnlControls.ResumeLayout(false);
             this.pnlControls.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLocMap)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,14 +168,11 @@
         private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.TextBox txtToken;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TreeView treeResult;
         private System.Windows.Forms.ProgressBar pbRequesting;
         private System.Windows.Forms.CheckBox ckAsync;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbFields;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.PictureBox picLocMap;
     }
 }
 

@@ -12,14 +12,14 @@ namespace IPInfo.NET.Sample
         {
             InitializeComponent();
 
-            cmbFields.Items.Add("All");
+            cmbFields.Items.Add("ALL");
             foreach (IPInfoKey key in Enum.GetValues(typeof(IPInfoKey)))
                 cmbFields.Items.Add(key);
             cmbFields.SelectedIndex = 0;
 
             btnRequest.Click += BtnRequest_Click;
         }
-
+        
         private async void BtnRequest_Click(object sender, EventArgs e)
         {
             treeResult.Nodes.Clear();
@@ -35,7 +35,6 @@ namespace IPInfo.NET.Sample
                     return;
                 }
                 result = await IPInfo.GetAsync(GetValidIP(), txtToken.Text);
-                result.DownloadLocalisationMap();
             }
             else
             {
